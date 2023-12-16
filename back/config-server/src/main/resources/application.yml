@@ -1,14 +1,13 @@
 server:
   port: 8000
 
-
 spring:
   cloud:
     compatibility-verifier:
       enabled: true
 
-  config:
-    server:
-      git:
-        uri: https://github.com/Fuji-vanilli/config-streaming-fepo.git
+    config:
+      server:
+        git:
+          uri: https://github.com/Fuji-vanilli/config-streaming-fepo.git
 
