@@ -10,6 +10,8 @@ import java.util.Set;
 public interface MovieController {
     @PostMapping("add")
     ResponseEntity<MovieResponse> add(@RequestBody MovieRequest request);
+    @GetMapping("getMovie")
+    ResponseEntity<String> getMovie();
     @GetMapping("get/{id}")
     ResponseEntity<MovieResponse> get(@PathVariable String id);
     @GetMapping("all")

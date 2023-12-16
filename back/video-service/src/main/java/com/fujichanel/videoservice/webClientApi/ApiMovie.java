@@ -16,14 +16,12 @@ import static com.fujichanel.videoservice.utils.Root.API_URL_TMDB;
 @Validated
 @ConfigurationProperties(prefix = "movie.api")
 public class ApiMovie {
-    private String apiKey;
+    private String apiKey= "08cc33bd5ae3a747598ce2ad84376e66";
     private final WebClient.Builder webClient;
 
     public String getMovie() {
         return webClient.build().get()
-                .uri("https://api.themoviedb.org/3", uriBuilder -> uriBuilder
-                        .queryParam("apiKey", apiKey)
-                        .build()
+                .uri("https://api.themoviedb.org/3/trending/all/week?api_Key="+apiKey
                 )
                 .retrieve()
                 .bodyToMono(String.class)

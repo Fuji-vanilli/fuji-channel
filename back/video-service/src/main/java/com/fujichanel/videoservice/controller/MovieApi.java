@@ -23,6 +23,11 @@ public class MovieApi implements MovieController{
     }
 
     @Override
+    public ResponseEntity<String> getMovie() {
+        return ResponseEntity.ok(movieService.stringApi());
+    }
+
+    @Override
     public ResponseEntity<MovieResponse> get(String id) {
         return ResponseEntity.ok(movieService.get(id));
     }
