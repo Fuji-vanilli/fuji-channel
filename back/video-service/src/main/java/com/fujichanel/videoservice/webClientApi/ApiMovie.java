@@ -21,8 +21,9 @@ public class ApiMovie {
 
     public String getMovie() {
         return webClient.build().get()
-                .uri("https://api.themoviedb.org/3/trending/all/week?api_Key="+apiKey
-                )
+                .uri("https://api.themoviedb.org/3",uriBuilder -> uriBuilder.path("/trending/all/week/")
+                        .queryParam("api_key", apiKey)
+                        .build())
                 .retrieve()
                 .bodyToMono(String.class)
                 .block();
