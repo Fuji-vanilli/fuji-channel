@@ -36,8 +36,6 @@ public class MovieServiceImpl implements MovieService{
         final Movie movie = movieRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Can't find movie with the id: " + id));
 
-
-
         return null;
     }
 
