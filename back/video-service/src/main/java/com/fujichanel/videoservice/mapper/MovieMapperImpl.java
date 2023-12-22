@@ -19,9 +19,20 @@ public class MovieMapperImpl implements MovieMapper {
                 .cast(request.getCast())
                 .build();
     }
-
     @Override
     public MovieResponse mapToMovieResponse(Movie movie) {
-        return null;
+        return MovieResponse.builder()
+                .id(movie.getId())
+                .title(movie.getTitle())
+                .description(movie.getDescription())
+                .cast(movie.getCast())
+                .count(movie.getCount())
+                .duration(movie.getDuration())
+                .genreId(movie.getGenreId())
+                .originalLanguage(movie.getOriginalLanguage())
+                .popularity(movie.getPopularity())
+                .vote(movie.getVote())
+                .build();
     }
 }
+
