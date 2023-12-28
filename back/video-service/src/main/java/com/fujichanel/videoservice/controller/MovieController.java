@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Set;
 
 public interface MovieController {
+    @GetMapping("auth")
+    ResponseEntity<String> getAuth();
     @PostMapping("add")
     ResponseEntity<MovieResponse> add(@RequestBody MovieRequest request);
     @GetMapping("getMovie")

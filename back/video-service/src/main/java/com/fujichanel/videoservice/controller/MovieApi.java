@@ -17,6 +17,12 @@ import static com.fujichanel.videoservice.utils.Root.APP_ROOT;
 @RequiredArgsConstructor
 public class MovieApi implements MovieController{
     private final MovieService movieService;
+
+    @Override
+    public ResponseEntity<String> getAuth() {
+        return ResponseEntity.ok("Authentication test!");
+    }
+
     @Override
     public ResponseEntity<MovieResponse> add(MovieRequest request) {
         return ResponseEntity.ok(movieService.add(request));
