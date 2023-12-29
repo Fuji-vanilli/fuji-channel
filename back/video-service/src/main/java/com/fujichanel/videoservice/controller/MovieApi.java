@@ -2,6 +2,7 @@ package com.fujichanel.videoservice.controller;
 
 import com.fujichanel.videoservice.dto.MovieRequest;
 import com.fujichanel.videoservice.dto.MovieResponse;
+import com.fujichanel.videoservice.entities.Movie;
 import com.fujichanel.videoservice.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -29,7 +30,7 @@ public class MovieApi implements MovieController{
     }
 
     @Override
-    public ResponseEntity<String> getMovie() {
+    public ResponseEntity<Set<MovieRequest>> getMovie() {
         return ResponseEntity.ok(movieService.stringApi());
     }
 

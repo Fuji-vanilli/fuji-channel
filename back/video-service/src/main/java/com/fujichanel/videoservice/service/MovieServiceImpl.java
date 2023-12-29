@@ -21,7 +21,7 @@ public class MovieServiceImpl implements MovieService{
     private final ApiMovie apiMovie;
 
     @Override
-    public String stringApi() {
+    public Set<MovieRequest> stringApi() {
         return apiMovie.getMovie();
     }
 

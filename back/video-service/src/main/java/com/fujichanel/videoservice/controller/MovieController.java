@@ -2,6 +2,7 @@ package com.fujichanel.videoservice.controller;
 
 import com.fujichanel.videoservice.dto.MovieRequest;
 import com.fujichanel.videoservice.dto.MovieResponse;
+import com.fujichanel.videoservice.entities.Movie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +14,7 @@ public interface MovieController {
     @PostMapping("add")
     ResponseEntity<MovieResponse> add(@RequestBody MovieRequest request);
     @GetMapping("getMovie")
-    ResponseEntity<String> getMovie();
+    ResponseEntity<Set<MovieRequest>> getMovie();
     @GetMapping("get/{id}")
     ResponseEntity<MovieResponse> get(@PathVariable String id);
     @GetMapping("all")

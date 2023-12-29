@@ -1,5 +1,7 @@
 package com.fujichanel.videoservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fujichanel.videoservice.model.Cast;
 import lombok.*;
 
@@ -11,13 +13,21 @@ import java.util.concurrent.ConcurrentHashMap;
 @Getter @Setter
 @AllArgsConstructor @NoArgsConstructor
 @Builder
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MovieRequest {
-    private String title;
-    private BigDecimal duration;
-    private Set<Long> genreId= ConcurrentHashMap.newKeySet();
-    private Set<Cast> cast= ConcurrentHashMap.newKeySet();
-    private String originalLanguage;
     private String description;
-    private Date releaseDate;
-    private String posterPath;
+    private String original_language;
+    private String original_title;
+    private boolean video;
+    private String title;
+    private Set<Integer> genre_ids;
+    private String poster_path;
+    private String media_type;
+    private Date release_date;
+    private String backdrop_path;
+    private Integer popularity;
+    private Double vote_average;
+    private String id;
+    private boolean adult;
+    private Integer vote_count;
 }

@@ -10,13 +10,7 @@ public class MovieMapperImpl implements MovieMapper {
     @Override
     public Movie mapToMovie(MovieRequest request) {
         return Movie.builder()
-                .title(request.getTitle())
-                .duration(request.getDuration())
-                .releaseDate(request.getReleaseDate())
-                .description(request.getDescription())
-                .posterPath(request.getPosterPath())
-                .genreId(request.getGenreId())
-                .cast(request.getCast())
+
                 .build();
     }
     @Override
