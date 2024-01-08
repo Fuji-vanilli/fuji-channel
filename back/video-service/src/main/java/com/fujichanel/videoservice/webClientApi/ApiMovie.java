@@ -10,6 +10,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.annotation.Validated;
@@ -27,12 +28,15 @@ import java.util.concurrent.ExecutionException;
 @Validated
 @ConfigurationProperties(prefix = "movie.api")
 public class ApiMovie {
-    private String apiKey= "08cc33bd5ae3a747598ce2ad84376e66";
+    @Value("${movie.api-key}")
+    private String apiKey;
+    @Value("${movie.url-movie}")
+    private String movieUrl;
     private final WebClient.Builder webClient;
 
     public Set<MovieRequest> getMovie() {
         final CompletableFuture<String> dataFuture = webClient.build().get()
-                .uri("https://api.themoviedb.org/3", uriBuilder -> uriBuilder.path("/trending/all/week")
+                .uri(movieUrl, uriBuilder -> uriBuilder.path("/trending/all/week")
                         .queryParam("api_key", apiKey)
                         .build())
                 .retrieve()

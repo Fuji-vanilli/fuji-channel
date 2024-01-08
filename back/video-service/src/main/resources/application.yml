@@ -1,6 +1,31 @@
+server:
+  port: 8030
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka_root:1234@localhost:8761/eureka
+
 spring:
   application:
     name: video-service
 
   config:
     import: optional:configserver:http://localhost:8000
+
+  security:
+    oauth2:
+      resourceServer:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/streaming-ms
+          jwk-set-url: ${spring.security.oauth2.resourceServer.jwt.issuer-uri}/protocol/openid-connect/certs
+
+jwt:
+  auth:
+    converter:
+      resource-id: movie-client
+      principal-attribute: preferred_name
+
+movie:
+  api-key: 08cc33bd5ae3a747598ce2ad84376e66
+  url-movie: https://api.themoviedb.org/3

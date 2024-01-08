@@ -4,3 +4,14 @@ spring:
 
   config:
     import: optional:configserver:http://localhost:8000
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+
+  username: ${EUREKA_USERNAME:eureka_root}
+  password: ${EUREKA_PASSWORD:1234}

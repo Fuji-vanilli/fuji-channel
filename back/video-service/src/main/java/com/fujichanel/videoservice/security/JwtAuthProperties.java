@@ -1,15 +1,16 @@
-package com.fujichanel.gatewayservice.config;
+package com.fujichanel.videoservice.security;
 
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.annotation.Validated;
 
 @Configuration
-@Getter
+@Getter @Setter
 @Validated
-@ConfigurationProperties(prefix = "jwt.auth2.converter")
-public class JwtAuthConfig {
+@ConfigurationProperties(prefix = "jwt.auth.converter")
+public class JwtAuthProperties {
     private String resourceId;
     private String principalAttribute;
 }

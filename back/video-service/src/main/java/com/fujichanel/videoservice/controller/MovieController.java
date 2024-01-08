@@ -2,15 +2,21 @@ package com.fujichanel.videoservice.controller;
 
 import com.fujichanel.videoservice.dto.MovieRequest;
 import com.fujichanel.videoservice.dto.MovieResponse;
-import com.fujichanel.videoservice.entities.Movie;
+
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+import java.util.Map;
 import java.util.Set;
 
 public interface MovieController {
+    @GetMapping("authentication")
+    Collection<String> getAuthorities();
     @GetMapping("auth")
-    ResponseEntity<String> getAuth();
+    @PreAuthorize("hasAuthority('ROLE_admin')")
+    ResponseEntity<Map<String, String>> getAuth();
     @PostMapping("add")
     ResponseEntity<MovieResponse> add(@RequestBody MovieRequest request);
     @GetMapping("getMovie")
@@ -24,4 +30,5 @@ public interface MovieController {
     );
     @DeleteMapping("delete/{id}")
     ResponseEntity<Boolean> delete(@PathVariable String id);
+
 }
