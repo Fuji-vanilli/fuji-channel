@@ -10,7 +10,9 @@ import { MovieDetailsComponent } from './pages/movie-details/movie-details.compo
 import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginComponent } from './pages/login/login.component';
+import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { LoginComponent } from './pages/login/login.component';
     HomeComponent,
     MovieDetailsComponent,
     SearchComponent,
-    LoginComponent
+    LoginComponent,
+    CardMovieComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule, 
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    PaginationModule.forRoot(), 
   ],
   providers: [
     provideClientHydration()
