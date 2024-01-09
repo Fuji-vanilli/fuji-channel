@@ -14,7 +14,7 @@ export class MovieDetailsComponent implements OnInit{
   movieCast: any;
 
   movieId: any;
-Math: any;
+  Math: any;
 
   constructor(private movieService: MovieApiService,
               private activateRoute: ActivatedRoute,
