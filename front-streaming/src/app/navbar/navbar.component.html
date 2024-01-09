@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg fixed-top" [ngStyle]="navBg">
+    <div class="container-fluid ms-5">
+      <a class="navbar-brand" routerLink=""><img
+          src="../../assets/a0151e0a3d3641d4baadfd01c40b6137__2_-removebg-preview.png" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse " id="navbarNav">
+  
+        <div class="btn-group ms-auto">
+          <button class="btn btn-secondary btn-custom" type="button">
+            <i class="bi bi-film m-2" routerLink="/cardMovie"></i>FILM  
+          </button>
+          <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu bg-dark ">
+            <li class="nav-item btn-category" *ngFor="let genre of genresMovie">
+              <a class="dropdown-item text-white " aria-current="page" [routerLink]= "['/cardMovie', genre.url]">{{genre.category}}</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="btn-group ms-3">
+          <button class="btn btn-secondary btn-custom" type="button">
+            <i class="bi bi-camera-reels m-2"></i>SERIE
+          </button>
+          <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="visually-hidden">Toggle Dropdown</span>
+          </button>
+          <ul class="dropdown-menu bg-dark">
+            <li class="nav-item btn-category" *ngFor="let genre of genresMovie">
+              <a class="dropdown-item text-white" aria-current="page" [routerLink]= "['/cardMovie', genre.url]">{{genre.category}}</a>
+            </li>
+          </ul>
+        </div>
+  
+        <div class="btn-group ms-3">
+          <button class="btn btn-secondary btn-custom"  type="button">
+            <i class="bi bi-filter-square m-3"></i>Catalogue 
+          </button>
+        </div>
+  
+  
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active " aria-current="page" routerLink=""><i class="bi bi-house-gear-fill m-3"></i>Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="search"><i class="bi bi-search m-3"></i>Search</a> 
+          </li>
+  
+        
+            <!--ul class="bg-dark">
+              <span>{{authService.profile?.email}} </span>
+              <a href="">[username]</a>
+              <li class="nav-item">
+                <a class="text-white" aria-current="page" routerLink="/login"><i class="bi bi-person-circle m-3"></i>Login</a>
+              </li>
+              <li class="nav-item ">
+                <a class="text-white" aria-current="page" routerLink="/logout"><i class="bi bi-person-circle m-3"></i>Logout</a>
+              </li>
+            </ul-->
+  
+        </ul>
+      </div>
+    </div>
+  </nav>
