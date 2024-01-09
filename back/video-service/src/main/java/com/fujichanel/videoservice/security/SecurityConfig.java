@@ -27,7 +27,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth-> auth.requestMatchers("/actuator/**"))
+                //.authorizeHttpRequests(auth-> auth.requestMatchers("/api/movie/**").permitAll())
+                .authorizeHttpRequests(auth-> auth.requestMatchers("/actuator/**").permitAll())
                 .authorizeHttpRequests(auth-> auth.anyRequest().authenticated());
 
         httpSecurity
