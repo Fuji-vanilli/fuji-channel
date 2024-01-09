@@ -13,6 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginComponent } from './pages/login/login.component';
 import { CardMovieComponent } from './pages/card-movie/card-movie.component';
+import { SingupComponent } from './pages/singup/singup.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CardMovieComponent } from './pages/card-movie/card-movie.component';
     MovieDetailsComponent,
     SearchComponent,
     LoginComponent,
-    CardMovieComponent
+    CardMovieComponent,
+    SingupComponent
   ],
   imports: [
     BrowserModule,

@@ -32,7 +32,7 @@
             <span class="visually-hidden">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu bg-dark">
-            <li class="nav-item btn-category" *ngFor="let genre of genresMovie">
+            <li class="nav-item btn-category" *ngFor="let genre of this.genresMovie">
               <a class="dropdown-item text-white" aria-current="page" [routerLink]= "['/cardMovie', genre.url]">{{genre.category}}</a>
             </li>
           </ul>
