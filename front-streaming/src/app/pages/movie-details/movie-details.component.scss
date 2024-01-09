@@ -1,0 +1,51 @@
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: Ubuntu;
+    padding: 0 0 12px 0 ;
+}
+
+p {
+    color: #ffffff;
+    font-family: Ubuntu;
+}
+
+a {
+    background: #ef4444;
+    color: #ffffff; 
+}
+
+a:hover {
+    color: #e50914;
+    background: #fff;   
+}
+
+.danger {
+    color: #e50914;
+}
+
+.text-red {
+    color: #e50914;
+}
+
+.block {
+    width: 80%;
+    background-color: #04AA6D;
+    font-size: 16px;
+    text-align: center;
+}
+
+.block:hover {
+    background: #fff;
+    color: #04AA6D;
+}
+
+.contain {
+    font-family: Ubuntu;
+}
