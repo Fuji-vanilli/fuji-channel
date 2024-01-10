@@ -6,44 +6,19 @@
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse " id="navbarNav">
   
-        <div class="btn-group ms-auto">
-          <button class="btn btn-secondary btn-custom" type="button">
-            <i class="bi bi-film m-2" routerLink="/cardMovie"></i>FILM  
-          </button>
-          <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="visually-hidden">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu bg-dark ">
-            <li class="nav-item btn-category" *ngFor="let genre of genresMovie">
-              <a class="dropdown-item text-white " aria-current="page" [routerLink]= "['/cardMovie', genre.url]">{{genre.category}}</a>
+        <div class="drop">
+          <ul>
+            <li>
+              <a href="" style="font-size: 18px;">Film &#x25BE;</a>
+              <ul class="dropdown">
+                <li *ngFor="let genre of genresMovie">
+                  <a [routerLink]="['/cardMovie', genre.url]">{{genre.category}}</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
-  
-        <div class="btn-group ms-3">
-          <button class="btn btn-secondary btn-custom" type="button">
-            <i class="bi bi-camera-reels m-2"></i>SERIE
-          </button>
-          <button type="button" class="btn btn-sm btn-danger dropdown-toggle dropdown-toggle-split"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="visually-hidden">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu bg-dark">
-            <li class="nav-item btn-category" *ngFor="let genre of this.genresMovie">
-              <a class="dropdown-item text-white" aria-current="page" [routerLink]= "['/cardMovie', genre.url]">{{genre.category}}</a>
-            </li>
-          </ul>
-        </div>
-  
-        <div class="btn-group ms-3">
-          <button class="btn btn-secondary btn-custom"  type="button">
-            <i class="bi bi-filter-square m-3"></i>Catalogue 
-          </button>
-        </div>
-  
   
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
@@ -59,5 +34,5 @@
   
         </ul>
       </div>
-    </div>
+
   </nav>

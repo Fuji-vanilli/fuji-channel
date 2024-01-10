@@ -12,7 +12,7 @@ export class NavbarComponent {
   navBg: any;
   isAuthenticate: boolean= false;
 
-  genresMovie: Array<Movie>= [
+  genresMovie: Movie[]= [
     {category: 'Action', url: 'action'},
     {category: 'Adventure', url: 'adventure'},
     {category: 'Animation', url: 'animation'},

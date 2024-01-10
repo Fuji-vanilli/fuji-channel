@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginComponent } from './pages/login/login.component';
 import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 import { SingupComponent } from './pages/singup/singup.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,8 +37,10 @@ import { SingupComponent } from './pages/singup/singup.component';
     PaginationModule.forRoot(), 
   ],
   providers: [
+
     provideClientHydration()
   ],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

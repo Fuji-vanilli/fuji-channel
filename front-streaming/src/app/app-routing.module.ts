@@ -7,6 +7,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 import { SingupComponent } from './pages/singup/singup.component';
 
+
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
   { path: 'movie/:id', component: MovieDetailsComponent},

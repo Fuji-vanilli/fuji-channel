@@ -41,3 +41,44 @@
     background: #e50914;
     border: none;
 }
+
+ul {
+    list-style: none;
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    text-decoration: none;
+    text-align: left;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+}
+
+ul li ul.dropdown li{
+    display: block;
+    background: #333;
+    margin: 2px 0px;
+}
+
+ul li ul.dropdown {
+    width: auto;
+    background: #00FF8C;
+    position: absolute;
+    z-index: 999;
+    display: none; 
+}
+
+ul li a:hover {
+    background: #222;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
