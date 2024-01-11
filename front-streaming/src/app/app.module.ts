@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
+import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -27,7 +28,8 @@ export function initializeKeycloak(keycloak: KeycloakService) {
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardMovieComponent
   ],
   imports: [
     BrowserModule,

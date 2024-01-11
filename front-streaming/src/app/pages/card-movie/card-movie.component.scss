@@ -1,0 +1,57 @@
+
+.rowposter {
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.text-white {
+    font-size: 16px;
+}
+
+.text-red {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    color: #e50914;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.rowing {
+    max-height: 200px;
+    object-fit: contain;
+    width: 100%;
+    box-sizing: content-box;
+    transition: transform 300ms;
+    margin-right: 1px;
+    margin-bottom: 5px;
+}
+
+.rowing:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.rowposter::-webkit-scrollbar {
+    display: none;
+}
+
+.largeposter {
+    max-width: 600px;
+  
+}
+
+.contain {
+    margin: 0 12rem 0 12rem;
+}
+
+.page-link {
+    background: #e50914;
+    border: none;
+    color: #ffffff;
+}
+
+.pagination {
+    background: #e50914;
+}
