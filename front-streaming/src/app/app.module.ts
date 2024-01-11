@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -31,7 +32,8 @@ export function initializeKeycloak(keycloak: KeycloakService) {
     AppComponent,
     NavbarComponent,
     CardMovieComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
