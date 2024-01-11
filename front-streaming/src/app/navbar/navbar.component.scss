@@ -1,0 +1,43 @@
+.navbar .navbar-brand{
+    color: #ef4444; 
+    font-weight: bold;
+}
+
+.navbar .navbar-brand img{
+    height: 50px;
+}
+
+.navbar-nav .nav-item .nav-link {
+    font-family: Ubuntu;
+    color: #ef4444;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.navbar-nav .nav-item  a:hover {
+    color: #fff;
+}
+
+.btn-category a:hover {
+    font-family: Ubuntu;
+    background: #e50914;
+    color: #fff;
+}
+
+.modal-movie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-custom {
+    background: transparent;
+    border: none;
+    font-family: Ubuntu;
+
+}
+
+.btn-custom:hover {
+    background: #e50914;
+    border: none;
+}
