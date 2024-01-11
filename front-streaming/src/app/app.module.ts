@@ -10,6 +10,7 @@ import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
+import { SearchComponent } from './pages/search/search.component';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -35,7 +36,8 @@ export function initializeKeycloak(keycloak: KeycloakService) {
     CardMovieComponent,
     HomeComponent,
     LoginComponent,
-    MovieDetailsComponent
+    MovieDetailsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
