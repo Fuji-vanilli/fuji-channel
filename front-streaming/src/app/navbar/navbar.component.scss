@@ -10,7 +10,7 @@
 .navbar-nav .nav-item .nav-link {
     font-family: Ubuntu;
     color: #ef4444;
-    font-weight: bold;
+    //font-weight: bold;
     font-size: 16px;
 }
 
@@ -42,43 +42,19 @@
     border: none;
 }
 
-ul {
-    list-style: none;
-    text-align: center;
-}
-
-ul li {
-    display: inline-block;
-    position: relative;
-}
-
-ul li a {
-    display: block;
-    text-decoration: none;
-    text-align: left;
+.nav-item button {
+    border: none;
+    background: #e50914;
+    border-radius: 24px;
     color: #fff;
-    font-size: 14px;
-    padding: 10px 25px;
+    padding: 8px 18px;
 }
 
-ul li ul.dropdown li{
-    display: block;
-    background: #333;
-    margin: 2px 0px;
+.nav-item button:hover {
+    opacity: 0.8;
+    transition:  0.8s ease;
 }
 
-ul li ul.dropdown {
-    width: auto;
-    background: #00FF8C;
-    position: absolute;
-    z-index: 999;
-    display: none; 
-}
-
-ul li a:hover {
-    background: #222;
-}
-
-ul li:hover ul.dropdown {
-    display: block;
+.active {
+    color: #ffffff;  /* Couleur du texte pour le lien actif */
 }

@@ -14,7 +14,23 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { LoginComponent } from './pages/login/login.component';
 import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 import { SingupComponent } from './pages/singup/singup.component';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 
+export function initializeKeycloak(keycloak: KeycloakService) {
+  return () =>
+    keycloak.init({
+      config: {
+        url: 'http://localhost:8080',
+        realm: 'streaming-ms',
+        clientId: 'movie-client' 
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri:
+          'http://localhost:4200/assets/silent-check-sso.html'
+      }
+    });
+}
 
 
 @NgModule({
@@ -33,11 +49,17 @@ import { SingupComponent } from './pages/singup/singup.component';
     ReactiveFormsModule, 
     HttpClientModule,
     AppRoutingModule,
+    KeycloakAngularModule,
     BrowserAnimationsModule,
-    PaginationModule.forRoot(), 
+    PaginationModule.forRoot(),  
   ],
   providers: [
-
+    { 
+      provide: APP_INITIALIZER, 
+      deps: [KeycloakService], 
+      useFactory: initializeKeycloak, 
+      multi: true
+  },
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

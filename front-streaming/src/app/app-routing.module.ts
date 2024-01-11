@@ -6,15 +6,16 @@ import { SearchComponent } from './pages/search/search.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CardMovieComponent } from './pages/card-movie/card-movie.component';
 import { SingupComponent } from './pages/singup/singup.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
   { path: '', component: HomeComponent }, 
   { path: 'movie/:id', component: MovieDetailsComponent},
   { path: 'search', component: SearchComponent },
-  { path: 'login', component: LoginComponent},
+  { path: 'login', component: LoginComponent, canActivate: [AuthGuard]},
   { path: 'cardMovie/:category', component: CardMovieComponent},
-  { path: 'singup', component: SingupComponent},
+  { path: 'signup', component: SingupComponent},
   //{ path: 'dashboard', component: DashboardComponent}
 ];
 

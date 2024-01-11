@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieApiService } from '../../services/movie-api.service';
+import { log } from 'console';
 
 
 @Component({
@@ -35,6 +36,8 @@ export class HomeComponent implements OnInit{
   constructor(private movieService: MovieApiService) {}
 
   ngOnInit(): void {
+    console.log("location general"+window.location.origin);
+    
     this.bannerApi();
     this.trendigApi();
     this.getActionMovie();

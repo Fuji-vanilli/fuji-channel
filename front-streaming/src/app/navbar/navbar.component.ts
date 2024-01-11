@@ -1,5 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Movie } from '../models/movie';
+import { Router } from '@angular/router';
 //import { SecurityService } from '../services/security.service';
 
 @Component({
@@ -25,7 +26,7 @@ export class NavbarComponent {
  
   ]
 
-  //constructor(public authService: SecurityService ) {}
+  constructor(public router: Router ) {}
 
   @HostListener('document:scroll') scrollover() {
     console.log(document.body.scrollTop, 'scrolltop#');
@@ -39,4 +40,8 @@ export class NavbarComponent {
       }
     }
   } 
+
+  signup() {
+    this.router.navigateByUrl('/signup');
+  }
 }
