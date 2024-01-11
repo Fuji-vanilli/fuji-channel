@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Pagination } from 'src/app/models/pagination';
 import { MovieApiService } from 'src/app/services/movie-api.service';
 
 
