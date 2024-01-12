@@ -10,7 +10,6 @@
 .navbar-nav .nav-item .nav-link {
     font-family: Ubuntu;
     color: #ef4444;
-    font-weight: bold;
     font-size: 16px;
 }
 
@@ -40,4 +39,51 @@
 .btn-custom:hover {
     background: #e50914;
     border: none;
+}
+
+.nav-link span {
+    color: #fff;
+    font-weight: bold;
+}
+
+.nav-link {
+    cursor: pointer;
+}
+
+.button {
+    border: none;
+    border-radius: 24px;
+    background: #ef4444;
+    color: #ffffff;
+    padding: 6px 16px;
+}
+
+.profile {
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-profile {
+    width: 40px; 
+    height: 40px; 
+    padding: 7px 10px; 
+    border-radius: 25px; 
+    font-size: 16px; 
+    text-align: center; 
+    margin-left: 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+.sub-menu-wrap {
+    position: relative;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+}
+
+.user-pic {
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
 }

@@ -7,8 +7,7 @@ import { MovieApiService } from 'src/app/services/movie-api.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit{
-
-  isLoading: boolean= true;
+ 
 
   bannerData: Array<any>= [];
   trendingData: Array<any>= [];

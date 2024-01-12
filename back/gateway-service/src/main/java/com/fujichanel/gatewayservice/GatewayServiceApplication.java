@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
+@CrossOrigin("*")
 public class GatewayServiceApplication {
 
 	public static void main(String[] args) {

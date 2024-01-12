@@ -1,5 +1,8 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Movie } from '../models/movie';
+import { SecurityService } from '../services/security.service';
+import { KeycloakService } from 'keycloak-angular';
+import { KeycloakProfile } from 'keycloak-js';
 
 
 @Component({
@@ -7,9 +10,10 @@ import { Movie } from '../models/movie';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   title: string= 'FUJI-CHANEL';
   navBg: any;
+  public profile?: KeycloakProfile;
 
   genresMovie: Array<Movie>= [
     {category: 'Action', url: 'action'},
@@ -24,7 +28,16 @@ export class NavbarComponent {
  
   ]
 
-  constructor( ) {}
+  constructor(private kcService: KeycloakService) {}
+  ngOnInit(): void {
+    if (this.kcService.isLoggedIn()) {
+      this.kcService.loadUserProfile().then(
+        profile=> {
+          this.profile= profile;
+        }
+      )
+    }
+  }
 
   @HostListener('document:scroll') scrollover() {
     console.log(document.body.scrollTop, 'scrolltop#');
@@ -38,4 +51,20 @@ export class NavbarComponent {
       }
     }
   } 
+
+  async login() {
+    await this.kcService.login({
+      redirectUri: window.location.origin 
+    })
+  }
+
+  logout() {
+    this.kcService.logout(window.location.origin);
+  }
+
+  register() {
+    this.kcService.register({
+      redirectUri: window.location.origin
+    })
+  }
 }

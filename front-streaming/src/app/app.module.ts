@@ -12,6 +12,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { MovieDetailsComponent } from './pages/movie-details/movie-details.component';
 import { SearchComponent } from './pages/search/search.component';
 import { SingupComponent } from './pages/singup/singup.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export function initializeKeycloak(keycloak: KeycloakService) {
   return () =>
@@ -39,13 +41,15 @@ export function initializeKeycloak(keycloak: KeycloakService) {
     LoginComponent,
     MovieDetailsComponent,
     SearchComponent,
-    SingupComponent
+    SingupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     KeycloakAngularModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     {
