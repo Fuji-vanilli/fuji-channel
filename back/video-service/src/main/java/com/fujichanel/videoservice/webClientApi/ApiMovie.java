@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fujichanel.videoservice.dto.MovieRequest;
+import com.fujichanel.videoservice.dto.MovieResponse;
 import com.fujichanel.videoservice.entities.Movie;
 import lombok.RequiredArgsConstructor;
 import org.json.JSONArray;
@@ -34,7 +35,7 @@ public class ApiMovie {
     private String movieUrl;
     private final WebClient.Builder webClient;
 
-    public Set<MovieRequest> getMovie() {
+    public Set<Movie> getMovie() {
         final CompletableFuture<String> dataFuture = webClient.build().get()
                 .uri(movieUrl, uriBuilder -> uriBuilder.path("/trending/all/week")
                         .queryParam("api_key", apiKey)
@@ -44,7 +45,7 @@ public class ApiMovie {
                 .toFuture();
 
         String dataBrute= "";
-        Set<MovieRequest> movies= new HashSet<>();
+        Set<Movie> movies= new HashSet<>();
         JSONArray results= null;
 
         try {
@@ -65,7 +66,7 @@ public class ApiMovie {
         }
 
         try {
-            final MovieRequest[] movies1 = objectMapper.readValue(results.toString(), MovieRequest[].class);
+            final Movie[] movies1 = objectMapper.readValue(results.toString(), Movie[].class);
             movies.addAll(Arrays.asList(movies1));
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);

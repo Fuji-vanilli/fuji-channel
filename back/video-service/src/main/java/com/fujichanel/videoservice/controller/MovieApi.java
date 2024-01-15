@@ -55,7 +55,7 @@ public class MovieApi implements MovieController{
     }
 
     @Override
-    public ResponseEntity<Set<MovieRequest>> getMovie() {
+    public ResponseEntity<Set<MovieResponse>> getMovie() {
         return ResponseEntity.ok(movieService.stringApi());
     }
 

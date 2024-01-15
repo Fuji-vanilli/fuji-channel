@@ -20,7 +20,7 @@ public interface MovieController {
     @PostMapping("add")
     ResponseEntity<MovieResponse> add(@RequestBody MovieRequest request);
     @GetMapping("getMovie")
-    ResponseEntity<Set<MovieRequest>> getMovie();
+    ResponseEntity<Set<MovieResponse>> getMovie();
     @GetMapping("get/{id}")
     ResponseEntity<MovieResponse> get(@PathVariable String id);
     @GetMapping("all")

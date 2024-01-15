@@ -19,6 +19,9 @@ spring:
         jwt:
           issuer-uri: http://localhost:8080/realms/streaming-ms
           jwk-set-url: ${spring.security.oauth2.resourceServer.jwt.issuer-uri}/protocol/openid-connect/certs
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/ST-VIDEO-DB
 
 jwt:
   auth:

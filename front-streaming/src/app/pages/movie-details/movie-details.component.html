@@ -10,14 +10,14 @@
              <button class="btn block mt-3 ms-4" data-bs-toggle="modal" data-bs-target="#modalLogin">Watch Movie</button>         
             <div class="row mt-5">
               <div class="col-lg-6">
-                <h5 class="text-white"><i class="bi bi-film p-3"></i>Genre: {{movieDetails.genres[0].name}} </h5>
-                <h4 class="text-white"><i class="bi bi-clock-fill  p-3"></i>Duration: {{movieDetails.runtime}}</h4>
-                <h4 class="text-white"><i class="bi bi-calendar-check-fill  p-3"></i>Date release: {{movieDetails.release_date}}</h4>
+                <h6 class="text-white"><i class="bi bi-film p-3 text-danger"></i>Genre: {{movieDetails.genres[0].name}} </h6>
+                <h6 class="text-white"><i class="bi bi-clock-fill text-danger  p-3"></i>Duration: {{movieDetails.runtime}}</h6>
+                <h6 class="text-white"><i class="bi bi-calendar-check-fill text-danger  p-3"></i>Date release: {{movieDetails.release_date}}</h6>
               </div>
               <div class="col-lg-6">
-                <h4 class="text-white"><i class="bi bi-star-fill  p-3"></i>Popularity: {{movieDetails.popularity}} </h4>
-                <h4 class="text-white"><i class="bi bi-translate  p-3"></i>Language: {{movieDetails.spoken_languages[0].english_name}}</h4>
-                <h4 class="text-white"><i class="bi bi-coin  p-3"></i>Budget: {{movieDetails.budget}} $</h4>
+                <h6 class="text-white"><i class="bi bi-star-fill text-danger  p-3"></i>Popularity: {{movieDetails.popularity}} </h6>
+                <h6 class="text-white"><i class="bi bi-translate text-danger  p-3"></i>Language: {{movieDetails.spoken_languages[0].english_name}}</h6>
+                <h6 class="text-white"><i class="bi bi-coin text-danger  p-3"></i>Budget: {{movieDetails.budget}} $</h6>
               </div>
             </div>
 
@@ -29,8 +29,8 @@
                             <img src="https://image.tmdb.org/t/p/original/{{cast.profile_path}}" alt="">
                         </div>
                         <div class="col-lg-10 mt-4 mb-4">
-                            <h3 class="text-white">{{cast.original_name}}</h3>
-                            <h5 class="text-white">{{cast.character}}</h5>
+                            <h5 class="text-white">{{cast.original_name}}</h5>
+                            <h6 class="text-white">{{cast.character}}</h6>
                         </div>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ export class SearchComponent implements OnInit{
   formGroup!: FormGroup;
   movieSearchList: Array<any>= [];
   keyword: string= '';
+  spinners: boolean= false;
 
   constructor(private formBuilder: FormBuilder,
               private movieService: MovieApiService) {}
@@ -26,11 +27,17 @@ export class SearchComponent implements OnInit{
   searchForm() {
     console.log(this.formGroup.value, 'serachvalue#');
     this.keyword= this.formGroup.value.keyword;
+    this.spinners= true;
     this.movieService.searchMovie(this.keyword).subscribe(
       (data)=> {
-        this.movieSearchList= data.results;
         console.log(this.movieSearchList);
-        
+        setTimeout(() => {
+          this.movieSearchList= data.results;
+        }, 2000);
+
+        setTimeout(() => {
+          this.spinners= false;
+        }, 2000);
       }
     )
     

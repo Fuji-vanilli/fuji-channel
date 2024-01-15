@@ -1,6 +1,7 @@
 services:
   mysql-db-inventory:
     image: mariadb:10.6
+    container-name: mysql-db-inventory
     restart: always
     volumes:
       - mysql_data:/var/lib/mysql

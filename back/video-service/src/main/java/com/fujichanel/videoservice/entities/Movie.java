@@ -18,15 +18,18 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Movie {
     @Id
     private String id;
-    private String title;
-    private BigDecimal duration;
-    private Set<Long> genreId= ConcurrentHashMap.newKeySet();
-    private Set<Cast> cast= ConcurrentHashMap.newKeySet();
-    private String originalLanguage;
     private String description;
-    private Date releaseDate;
-    private BigDecimal vote;
-    private BigDecimal count;
-    private String posterPath;
-    private BigDecimal popularity;
+    private String original_language;
+    private String original_title;
+    private boolean video;
+    private String title;
+    private Set<Integer> genre_ids;
+    private String poster_path;
+    private String media_type;
+    private Date release_date;
+    private String backdrop_path;
+    private Integer popularity;
+    private Double vote_average;
+    private boolean adult;
+    private Integer vote_count;
 }

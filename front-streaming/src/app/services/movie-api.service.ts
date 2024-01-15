@@ -13,7 +13,7 @@ export class MovieApiService {
   apiKey= '08cc33bd5ae3a747598ce2ad84376e66';
 
   getAuth(): Observable<any> {
-    return this.http.get('http://localhost:8020/VIDEO-SERVICE/api/movie/authentication');
+    return this.http.get('http://localhost:8030/api/movie/authentication');
   }
 
   bannerApiData(): Observable<any> {

@@ -7,7 +7,8 @@ import com.fujichanel.videoservice.entities.Movie;
 import java.util.Set;
 
 public interface MovieService {
-    Set<MovieRequest> stringApi();
+    Set<MovieResponse> stringApi();
+    Set<MovieResponse> addFromTmdb();
     MovieResponse add(MovieRequest request);
     MovieResponse get(String id);
     Set<MovieResponse> all(int page, int size);

@@ -13,7 +13,7 @@ import { KeycloakProfile } from 'keycloak-js';
 export class NavbarComponent implements OnInit {
   title: string= 'FUJI-CHANEL';
   navBg: any;
-  public profile?: KeycloakProfile;
+  public profile?: KeycloakProfile | null;
 
   genresMovie: Array<Movie>= [
     {category: 'Action', url: 'action'},
@@ -38,7 +38,7 @@ export class NavbarComponent implements OnInit {
       )
     }
   }
-
+/*
   @HostListener('document:scroll') scrollover() {
     console.log(document.body.scrollTop, 'scrolltop#');
     if (document.body.scrollTop> 0 || document.documentElement.scrollTop> 0) {
@@ -51,14 +51,15 @@ export class NavbarComponent implements OnInit {
       }
     }
   } 
-
+*/
   async login() {
     await this.kcService.login({
-      redirectUri: window.location.origin 
+      redirectUri: window.location.origin+"/dashboard"
     })
   }
 
   logout() {
+    event?.preventDefault();
     this.kcService.logout(window.location.origin);
   }
 
@@ -66,5 +67,12 @@ export class NavbarComponent implements OnInit {
     this.kcService.register({
       redirectUri: window.location.origin
     })
+  }
+
+  toggleMenu() {
+    const subMenu= document.getElementById("subMenu");
+    if (subMenu) {
+      subMenu.classList.toggle("open-menu");
+    }
   }
 }

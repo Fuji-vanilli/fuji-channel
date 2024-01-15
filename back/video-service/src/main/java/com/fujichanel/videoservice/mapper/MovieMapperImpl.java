@@ -19,13 +19,11 @@ public class MovieMapperImpl implements MovieMapper {
                 .id(movie.getId())
                 .title(movie.getTitle())
                 .description(movie.getDescription())
-                .cast(movie.getCast())
-                .count(movie.getCount())
-                .duration(movie.getDuration())
-                .genreId(movie.getGenreId())
-                .originalLanguage(movie.getOriginalLanguage())
                 .popularity(movie.getPopularity())
-                .vote(movie.getVote())
+                .adult(movie.isAdult())
+                .video(movie.isVideo())
+                .backdrop_path(movie.getBackdrop_path())
+                .media_type(movie.getMedia_type())
                 .build();
     }
 }

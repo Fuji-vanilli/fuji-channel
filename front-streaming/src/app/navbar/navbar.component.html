@@ -53,40 +53,56 @@
             <a class="nav-link" routerLink="search"><i class="bi bi-search m-3"></i>Search</a> 
           </li>
           <li class="nav-item" *ngIf="profile">
-            
-            <button class="btn btn-danger btn-profile">{{profile.username?.charAt(0)}}</button>
+            <a class="nav-link " routerLink="search" style="font-size: 20px; margin-left: 30px; color: #fff;">
+              <div class="icon">
+                <div class="badge">4</div>
+                <i class="bi bi-bell"></i>
+              </div>
+            </a> 
+          </li>
+          <li class="nav-item" *ngIf="profile">
+            <button class="btn btn-danger btn-profile" (click)="toggleMenu()">{{profile.firstName?.charAt(0)}}</button>
           </li>
           <li class="nav-item">
             <a class="nav-link" *ngIf="!profile" aria-current="page" style="margin-left: 30px; margin-right: 12px;" (click)="login()">Login</a> 
           </li>
-          <button class="button" *ngIf="!profile" (click)="register()">Singup</button>
+          <button class="button" *ngIf="!profile" (click)="register()">Sign up</button> 
         </ul>
-          <div class="sub-menu-wrap">
-            <div class="sub-menu">
-              <div class="uer-info">
-                <img src="/assets/download(36).jpg" alt="" class="user-pic">
-                <h2 style="color: #fff;">Fuji Vanilli</h2>
-              </div>
+        <div class="sub-menu-wrap" id="subMenu">
+          <div class="sub-menu">
+            <div class="user-info">
+              <img src="../../assets/gojo.jpeg" alt="" class="user-pic">    
+              <div class="user-details">
+                <h3>{{profile?.firstName+" "+profile?.lastName}}</h3>
+                <h6>{{profile?.email}}</h6>   
+              </div>      
             </div>
-          </div>
-
-          <!--li class="nav-item">
-            <a class="nav-link">
-              <span *ngIf="profile ; else not_logged">{{profile.username}}</span>
-              <ng-template #not_logged>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" (click)="login()"><i class="bi bi-person-circle m-3"></i>Login</a>
-                </li>
-              </ng-template>
+            
+            <hr>
+            <a href="" class="sub-menu-link">
+              <i class="bi bi-person-fill"></i>
+              <p>Edit profile</p>
+              <span><i class="bi bi-chevron-right"></i></span>
             </a>
-          </li>
-          <li class="nav-item" *ngIf="!profile">
-            <a class="nav-link" aria-current="page" routerLink="/login">[username]</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" (click)="logout()"><i class="bi bi-person-circle m-3"></i>Logout</a> 
-          </li-->
-        
-      </div>
+            <a href="" class="sub-menu-link">
+              <i class="bi bi-gear-fill"></i>
+              <p>Settings</p>
+              <span><i class="bi bi-chevron-right"></i></span>
+            </a>
+            <a href="" class="sub-menu-link">
+              <i class="bi bi-question-circle-fill"></i>
+              <p>Help</p>
+              <span><i class="bi bi-chevron-right"></i></span>
+            </a>
+            <hr>
+            
+            <a href="" class="sub-menu-link mt-4" (click)="logout()">
+              <i class="bi bi-escape"></i>
+              <p>Logout</p>
+              <span><i class="bi bi-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>        
+      </div>     
     </div>
   </nav>
